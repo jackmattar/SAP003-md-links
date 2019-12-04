@@ -49,7 +49,7 @@ Caso ocorra um erro de permissão na instalação tente:
 Para usar a biblioteca em seus projetos JavaScript, faça um `require` no seu arquivo da seguinte forma:
 
 ```js
-const mdLinks = require(".caminho-da-pasta-de-instalação/libs/index.js");
+const mdLinks = require("md-links");
 
 mdLinks(path, option)
   .then(links => {
@@ -59,7 +59,9 @@ mdLinks(path, option)
 ```
 `path`: Rota absoluta ou relativa ao arquivo.
 
-`option`: Um objeto com a propriedade validate, que é um booleano, caso queira validar os links ou não.
+`option`: Um objeto com a propriedade validate, cujo valor é um booleano,
+`{validate: true}` ou `{validate: false}`.
+
 
 #### CLI (Command Line Interface - Interface de Linha de Comando)
 
@@ -85,11 +87,21 @@ mdLinks('./exemplo.md', {validate: true})
 
 #### Retorno esperado
 
-`$ md-links ./algum/exemplo.md --validate
-http://algo.com/2/3/ 200 Link de algo
-https://outra-coisa-.net/algum-doc.html 404 algum doc
-https://site-inexistente.com ENOTFOUND Nome do site
-http://google.com/ 301 Google`
+`
+[
+  {
+    href: 'https://pt.wikipedia.org/wiki/Markdown',
+    text: 'Markdown',
+    status: 200
+  }
+  {
+    href: 'https://google.com',
+    text: Google,
+    status: 200
+  }
+]
+
+`
 
 ## 4. Considerações Finais
 
