@@ -62,6 +62,7 @@ mdLinks(path, option)
 `option`: Um objeto com a propriedade validate, cujo valor é um booleano,
 `{validate: true}` ou `{validate: false}`.
 
+
 #### CLI (Command Line Interface - Interface de Linha de Comando)
 
 Você também pode usar com uma CLI direto no seu terminal, da seguinte maneira:
